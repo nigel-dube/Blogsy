@@ -6,10 +6,10 @@ interface IappProps {
     id: string;
     title: string;
     content: string;
-    imageUrl: string | null;
+    imageUrl: string;
     authorId: string;
     authorName: string;
-    authorImage: string | null;
+    authorImage: string;
     createdAt: Date;
     updatedAt: Date;
   };
@@ -21,7 +21,7 @@ export function BlogPostCard({ data }: IappProps) {
       <Link href={`/post/${data.id}`} className="block w-full h-full">
         <div className="relative h-48 w-full overflow-hidden">
           <Image
-            src={data.imageUrl  ?? "/default-avatar.jpg"}
+            src={data.imageUrl}
             alt="Image for blog"
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -41,7 +41,7 @@ export function BlogPostCard({ data }: IappProps) {
             <div className="flex items-center space-x-2">
               <div className="relative size-8 overflow-hidden rounded-full">
                 <Image
-                  src={data.authorImage ?? "/default-avatar.jpg"}
+                  src={data.authorImage}
                   alt={data.authorName}
                   fill
                   className="object-cover"
