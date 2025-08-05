@@ -22,6 +22,9 @@ async function getData(userId: string) {
 export default async function DashboardRoute () {
     const { getUser } = getKindeServerSession();
     const user = await getUser();
+    if (!user) {
+        return <div className="text-center">You need to be logged in to view this page.</div>;
+    }
     const data = await getData(user.id);
 
     return (
