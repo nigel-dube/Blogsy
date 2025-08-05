@@ -11,6 +11,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
+export const revalidate = 60;
+
 export default function CreateBlogroute() {
   return (
     <div>
